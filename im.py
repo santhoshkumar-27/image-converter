@@ -54,13 +54,13 @@ def process_images(input_folder, output_folder, thumbnail_size=(100, 100), thumb
         # Check if the file is an image (you can add more image formats if needed)
         if filename.lower().endswith(('.png', '.jpg', '.jpeg', '.gif')):
             create_thumbnail(input_path, output_folder, thumbnail_size=thumbnail_size, output_format=thumbnail_format)
-            create_same_size_image(input_path, output_folder, output_format=same_size_format)
+            # create_same_size_image(input_path, output_folder, output_format=same_size_format)
 
 if __name__ == "__main__":
     input_folder = "/home/tlspc-171/Pictures/geniemd"
-    output_folder = "/home/tlspc-171/Pictures/geniemd/output"
+    output_folder = "/home/tlspc-171/Pictures/geniemd/onlythumb"
     thumbnail_size = (100, 100)
-    thumbnail_format = "JPEG"
+    thumbnail_format = "gif"
     same_size_format = "WEBP"
 
     process_images(input_folder, output_folder, thumbnail_size=thumbnail_size, thumbnail_format=thumbnail_format, same_size_format=same_size_format)
