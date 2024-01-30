@@ -16,8 +16,8 @@ def create_thumbnail(input_path, output_folder, thumbnail_size=(100, 100), outpu
         # Construct the output path for the thumbnail
         thumbnail_output_path = os.path.join(output_folder, f"{filename}_thumbnail.{output_format.lower()}")
 
-        # Save the thumbnail with the specified format
-        thumbnail.save(thumbnail_output_path, format=output_format)
+        # Save the thumbnail (use the original image format)
+        thumbnail.save(thumbnail_output_path)
 
         print(f"Thumbnail created successfully: {thumbnail_output_path}")
 
@@ -60,7 +60,7 @@ if __name__ == "__main__":
     input_folder = "/home/tlspc-171/Pictures/geniemd"
     output_folder = "/home/tlspc-171/Pictures/geniemd/onlythumb"
     thumbnail_size = (100, 100)
-    thumbnail_format = "gif"
+    thumbnail_format = "jpg"
     same_size_format = "WEBP"
 
     process_images(input_folder, output_folder, thumbnail_size=thumbnail_size, thumbnail_format=thumbnail_format, same_size_format=same_size_format)
